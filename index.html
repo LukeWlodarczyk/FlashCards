@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Flashcards</title>
+  <link href="https://styleguide.brainly.com/134.2.1/style-guide.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="sg-header">
+    <div class="sg-header__container">
+      <div class="sg-header__content">
+        <h1>FlashCards</h1>
+        <div class="sg-header__content-item">
+          <div class="timer">
+            <svg class="sg-icon sg-icon--mustard sg-icon--x16">
+              <use xlink:href="#icon-counter"></use>
+            </svg>
+            <span id="timer" class="">20</span>s
+          </div>
+          <div>
+            <svg class="sg-icon sg-icon--mustard sg-icon--x16">
+              <use xlink:href="#icon-cup"></use>
+            </svg>
+            <span id="score" class="">0</span> points
+          </div>
+          <div>
+            <span id="lives" class="">5</span>
+            <svg class="sg-icon sg-icon--peach sg-icon--x14">
+              <use xlink:href="#icon-heart"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sg-section">
+    <div class="sg-section__container">
+      <button id="muteBtn" class="sg-button-secondary sg-button-mute">Mute</button>
+      <button id="openModal" class="sg-button-secondary sg-button-add">
+          <span>Add question</span>
+          <svg class="sg-icon sg-icon--x10 sg-icon--margin-small">
+            <use xlink:href="#icon-plus"></use>
+          </svg>
+        </button>
+      <div class="sg-card--centered sg-card--padding-large sg-card">
+
+        <div class="sg-card__hole">
+          <p id="question" class="">FlashCards</p>
+        </div>
+        <img src="./img/banana.gif" class="drum displayNone" id="drum" alt='banana playing drum' />
+        <div id="answers" class="sg-card__hole sg-card__hole--lavender card">
+          <div class="sg-popup-menu__hole">
+            <button class='sg-button--margin-small sg-button--mw-small sg-button-primary' id='a' data-id='0'>Start game</button>
+          </div>
+          <div class="sg-popup-menu__hole displayNone">
+            <button class='sg-button--margin-small sg-button--mw-small sg-button-primary sg-button-primary--alt' id='b' data-id='1'>Start game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class='modal' id='modal'>
+    <div class="sg-card sg-card--centered sg-card--padding-large sg-card--margin-none">
+      <div class="sg-card__hole">
+        <input type="text" class="sg-input sg-input--large" id='customQuestion' placeholder="Question">
+      </div>
+      <div id="answers" class="sg-card__hole sg-card__hole--lavender card">
+        <div class="sg-popup-menu__hole">
+          <input type="text" class="input--margin-small sg-input" id='customAnswerA' placeholder="Answer A">
+          <div class="sg-label sg-label--secondary">
+            <div class="sg-label__icon">
+              <div class="sg-checkbox">
+                <input type="checkbox" class="sg-checkbox__element" id="checkbox-1">
+                <label class="sg-checkbox__ghost" for="checkbox-1">
+                  <svg class="sg-icon sg-icon--adaptive sg-icon--x10">
+                    <use xlink:href="#icon-check"></use>
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <label class="sg-label__text" for="checkbox-1">Correct</label>
+          </div>
+        </div>
+        <div class="sg-popup-menu__hole">
+          <input type="text" class="input--margin-small sg-input" id='customAnswerB' placeholder="Answer B">
+          <div class="sg-label sg-label--secondary">
+            <div class="sg-label__icon">
+              <div class="sg-checkbox">
+                <input type="checkbox" class="sg-checkbox__element" id="checkbox-2">
+                <label class="sg-checkbox__ghost" for="checkbox-2">
+                  <svg class="sg-icon sg-icon--adaptive sg-icon--x10">
+                    <use xlink:href="#icon-check"></use>
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <label class="sg-label__text" for="checkbox-2">Correct</label>
+          </div>
+        </div>
+      </div>
+      <button class='sg-button--centered button--margin-small sg-button-primary sg-button-primary--alt' id='addCustomQuestion'>Add</button>
+      <button class="close" id='closeModal'>
+        <svg class="sg-icon sg-icon--lavender sg-icon--x16">
+          <use xlink:href="#icon-x"></use>
+        </svg>
+      </button>
+      <small id="errorMsg" class="errorMsg"></small>
+    </div>
+  </div>
+
+  <script src="https://styleguide.brainly.com/images/icons-1b40deaa8d.js"></script>
+</body>
+
+</html>
